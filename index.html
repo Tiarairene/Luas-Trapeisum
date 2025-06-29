@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Trapesium</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Kalkulator Luas Trapesium</h1>
+        <div class="input-group">
+            <label for="sisiA">Panjang Sisi Sejajar A:</label>
+            <input type="number" id="sisiA" placeholder="Masukkan panjang sisi A">
+        </div>
+        <div class="input-group">
+            <label for="sisiB">Panjang Sisi Sejajar B:</label>
+            <input type="number" id="sisiB" placeholder="Masukkan panjang sisi B">
+        </div>
+        <div class="input-group">
+            <label for="tinggi">Tinggi Trapesium:</label>
+            <input type="number" id="tinggi" placeholder="Masukkan tinggi">
+        </div>
+        <button onclick="hitungLuas()">Hitung Luas</button>
+        <div class="result" id="hasilLuas">
+            Luas Trapesium: <span id="luas">0</span>
+        </div>
+    </div>
+
+    <script>
+        function hitungLuas() {
+            const sisiA = parseFloat(document.getElementById('sisiA').value);
+            const sisiB = parseFloat(document.getElementById('sisiB').value);
+            const tinggi = parseFloat(document.getElementById('tinggi').value);
+
+            if (isNaN(sisiA) || isNaN(sisiB) || isNaN(tinggi)) {
+                alert("Mohon masukkan semua nilai dengan angka yang valid.");
+                return;
+            }
+
+            const luas = 0.5 * (sisiA + sisiB) * tinggi;
+            document.getElementById('luas').textContent = luas.toFixed(2); // Menampilkan 2 angka desimal
+        }
+    </script>
+</body>
+</html>
